@@ -53,6 +53,8 @@ searchCity(city);
 function getCurrentLocation(event) {
 event.preventDefault();
 navigator.geolocation.getCurrentPosition(searchLocation);
+axios.get(apiUrl).then(displayWeatherCondition);
+
 
 }
 
@@ -72,10 +74,9 @@ let temperature = Math.round(response.data.main.temp)
 let temperatureElement = document.querySelector("#temperature");
 temperatureElement.innerHTML = `${temperature}`
 
-
 }
 
-searchCity("Vancouver");
+searchCity("London");
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
