@@ -81,7 +81,7 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("submit", getCurrentLocation);
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
 let dateElement = document.querySelector("#date");
