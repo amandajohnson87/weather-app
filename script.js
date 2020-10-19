@@ -53,7 +53,12 @@ searchCity(city);
 function getCurrentLocation(event) {
 event.preventDefault();
 navigator.geolocation.getCurrentPosition(searchLocation);
+
+let units = "metric";
+let apiKey = "961667857ac92e50fc2594f42d82b1ee"; 
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(displayWeatherCondition);
+
 
 
 }
@@ -64,7 +69,7 @@ let longitude = position.coords.longitude;
 let units = "metric";
 let apiKey = "961667857ac92e50fc2594f42d82b1ee"; 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(displayCurrentConditions);
+axios.get(apiUrl).then(displayWeatherCondition);
 
 }
 
